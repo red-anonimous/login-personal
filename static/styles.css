@@ -1,0 +1,108 @@
+/* Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal del login */
+.login-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    width: 380px;
+    text-align: center;
+    max-width: 90%;
+}
+
+/* Logo "facebook" */
+.logo {
+    color: #1877f2;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Campos de entrada */
+.input-field {
+    width: 100%;
+    padding: 14px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 17px;
+    box-sizing: border-box;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+}
+
+/* Estilos para botones */
+.btn {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 6px;
+    width: 100%; /* Este se mantiene en el botón primario */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #1877f2;
+}
+
+.btn-primary:hover {
+    background-color: #166fe5;
+}
+
+.btn-secondary {
+    background-color: #42b72a;
+    font-size: 17px;
+    padding: 12px 16px;
+    /* --- Ajustes para el botón verde --- */
+    width: auto; /* Permite que el ancho se ajuste al contenido */
+    max-width: 200px; /* Limita el ancho máximo para que no sea demasiado grande */
+    margin-left: auto; /* Centrar el bloque */
+    margin-right: auto; /* Centrar el bloque */
+    display: block; /* Asegura que ocupe su propia línea y se pueda centrar con margin: auto */
+    /* --- Fin de ajustes --- */
+}
+
+.btn-secondary:hover {
+    background-color: #36a420;
+}
+
+/* Enlace "Olvidaste tu contraseña?" */
+.forgot-password-link {
+    display: block;
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+/* Separador visual */
+.separator {
+    border-bottom: 1px solid #dadde1;
+    margin: 20px 0;
+}

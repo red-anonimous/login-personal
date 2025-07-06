@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="logo">Personal login</h1>
+
+        <form class="login-form" action="/guardar" method="POST">
+            <input type="text" name="usuario" placeholder="Correo electrónico o número de teléfono" class="input-field" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" class="input-field" required>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </form>
+
+        <a href="#" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+        <div class="separator"></div>
+        <a href="#" class="btn btn-secondary create-account-btn">Crear cuenta nueva</a>
+    </div>
+</body>
+</html>
