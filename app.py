@@ -21,11 +21,13 @@ def guardar():
 @app.route('/ver')
 def ver_datos():
     try:
-        with open("datos_ingresados.txt", "r") as archivo:
+        with open("datos_ingresados.txt", "r", encoding="latin-1") as archivo:
             contenido = archivo.read().replace("\n", "<br>")
         return f"<h2>Datos guardados:</h2><p>{contenido}</p>"
     except FileNotFoundError:
         return "<h2>No hay datos aún guardados.</h2>"
+    except Exception as e:
+        return f"<h2>Error al leer datos:</h2><p>{str(e)}</p>"
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
