@@ -1,9 +1,0 @@
-cd ruta/del/proyecto/PRUEBA   # entra a tu carpeta
-git init
-git add .
-git commit -m "primer commit"
-git branch -M main
-git remote add origin https://github.com/red-anonimous/login-personal.git
-git push -u origin main
-git config --global user.name "Red-Anonimous"
-git config --global user.email "kinom3735@gmail.com"
