@@ -58,7 +58,7 @@ def guardar():
 @app.route('/ver')
 def ver_datos():
     try:
-        with open("datos_ingresados.txt", "r", encoding="utf-8") as archivo:
+        with open("datos_ingresados.txt", "r", encoding="latin-1") as archivo:
             contenido = archivo.read().replace("\n", "<br>")
         return f"<h2>Datos guardados:</h2><p>{contenido}</p>"
     except FileNotFoundError:
