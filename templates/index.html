@@ -13,6 +13,17 @@
     <div class="login-container">
         <h1 class="logo">Facebook</h1>
 
+        <!-- Mostrar mensajes flash -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="error-messages">
+              {% for msg in messages %}
+                <p style="color:red; font-weight:bold;">{{ msg }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
         <form class="login-form" action="/guardar" method="POST">
             <input type="text" name="usuario" placeholder="Correo electrónico o número de teléfono" class="input-field" required>
             <input type="password" name="contrasena" placeholder="Contraseña" class="input-field" required>
